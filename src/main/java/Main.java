@@ -14,6 +14,7 @@ public class Main {
         services.add(new BuildingTypeService());
         services.add(new StreetService());
         services.add(new AddressService());
+        services.add(new EstateTypeService());
 
         for (DatabaseEntityService service : services){
             DatabaseEntity entity = (DatabaseEntity) service.findById(1);

@@ -34,5 +34,6 @@ public class HibernateSessionFactoryUtil {
         configuration.addAnnotatedClass(BuildingType.class);
         configuration.addAnnotatedClass(Street.class);
         configuration.addAnnotatedClass(Address.class);
+        configuration.addAnnotatedClass(EstateType.class);
     }
 }

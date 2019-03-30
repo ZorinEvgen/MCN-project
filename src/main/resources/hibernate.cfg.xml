@@ -20,6 +20,7 @@
         <mapping class="BuildingType" package="models"/>
         <mapping class="Street" package="models"/>
         <mapping class="Address" package="models"/>
+        <mapping class="EstateType" package="models"/>
 
     </session-factory>
 
