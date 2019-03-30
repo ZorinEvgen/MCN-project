@@ -17,6 +17,9 @@ public class Street implements DatabaseEntity{
     @JoinColumn(name = "\"District_id\"")
     private District district;
 
+    public Street() {
+    }
+
     public Street(String name) {
         this.name = name;
     }

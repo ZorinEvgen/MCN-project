@@ -17,6 +17,9 @@ public class District implements DatabaseEntity{
     @JoinColumn (name = "\"FederalEntity_id\"")
     private FederalEntity federalEntity;
 
+    public District() {
+    }
+
     public District(String name) {
         this.name = name;
     }

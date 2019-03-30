@@ -13,6 +13,9 @@ public class BuildingType implements DatabaseEntity{
     @Column(name = "\"Type\"")
     private String type;
 
+    public BuildingType() {
+    }
+
     public BuildingType(String type) {
         this.type = type;
     }
