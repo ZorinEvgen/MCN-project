@@ -13,14 +13,15 @@ public class District {
     @Column(name = "\"Name\"")
     private String name;
 
-    @Column(name = "\"FederalEntity_id\"")
-    private int federalEntityId;
+    @ManyToOne (targetEntity = FederalEntity.class)
+    @JoinColumn (name = "\"FederalEntity_id\"")
+    private FederalEntity federalEntity;
 
     public District(){}
 
-    public District(String name, int federalEntityId) {
+    public District(String name, FederalEntity federalEntity) {
         this.name = name;
-        this.federalEntityId = federalEntityId;
+        this.federalEntity = federalEntity;
     }
 
     public int getId() {
@@ -35,12 +36,12 @@ public class District {
         this.name = name;
     }
 
-    public int getFederalEntityId() {
-        return federalEntityId;
+    public FederalEntity getFederalEntity() {
+        return federalEntity;
     }
 
-    public void setFederalEntityId(int federalEntityId) {
-        this.federalEntityId = federalEntityId;
+    public void setFederalEntity(FederalEntity federalEntity) {
+        this.federalEntity = federalEntity;
     }
 
     @Override
@@ -48,7 +49,7 @@ public class District {
         return "District{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", federalEntityId=" + federalEntityId +
+                ", federalEntity=" + federalEntity +
                 '}';
     }
 }
