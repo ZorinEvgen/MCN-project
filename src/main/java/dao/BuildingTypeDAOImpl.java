@@ -1,12 +1,11 @@
 package dao;
 
-import dao.interfaces.BuildingTypeDAO;
 import models.BuildingType;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-public class BuildingTypeDAOImpl implements BuildingTypeDAO {
+public class BuildingTypeDAOImpl implements EntityDAOImpl<BuildingType> {
 
     public BuildingType findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(BuildingType.class, id);

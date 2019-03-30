@@ -1,12 +1,11 @@
 package dao;
 
-import dao.interfaces.FederalEntitiesDAO;
 import models.FederalEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-public class FederalEntitiesDAIImpl implements FederalEntitiesDAO {
+public class FederalEntitiesDAIImpl implements EntityDAOImpl<FederalEntity> {
 
     public FederalEntity findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(FederalEntity.class, id);
