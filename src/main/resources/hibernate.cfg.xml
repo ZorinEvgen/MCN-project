@@ -15,8 +15,9 @@
         <property name="show_sql">true</property>
 
         <!-- MAPPINGS -->
-        <mapping class="FederalEntity" package="models"></mapping>
-        <mapping class="District" package="models"></mapping>
+        <mapping class="FederalEntity" package="models"/>
+        <mapping class="District" package="models"/>
+        <mapping class="BuildingType" package="models"/>
 
     </session-factory>
 

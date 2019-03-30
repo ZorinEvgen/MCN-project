@@ -1,5 +1,6 @@
 package utils;
 
+import models.BuildingType;
 import models.District;
 import models.FederalEntity;
 import org.hibernate.SessionFactory;
@@ -32,5 +33,6 @@ public class HibernateSessionFactoryUtil {
     private static void addingAnnotatedClasses(Configuration configuration){
         configuration.addAnnotatedClass(FederalEntity.class);
         configuration.addAnnotatedClass(District.class);
+        configuration.addAnnotatedClass(BuildingType.class);
     }
 }
