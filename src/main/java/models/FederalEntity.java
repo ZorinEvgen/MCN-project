@@ -13,8 +13,6 @@ public class FederalEntity implements DatabaseEntity{
     @Column(name = "\"Name\"")
     private String name;
 
-    public FederalEntity(){}
-
     public FederalEntity(String name){
         this.name = name;
     }
