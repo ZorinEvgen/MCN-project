@@ -3,7 +3,7 @@ package services;
 import dao.BuildingTypeDAOImpl;
 import models.BuildingType;
 
-public class BuildingTypeService {
+public class BuildingTypeService implements DatabaseService<BuildingType> {
     private BuildingTypeDAOImpl impl = new BuildingTypeDAOImpl();
 
     public BuildingType findById(int id){

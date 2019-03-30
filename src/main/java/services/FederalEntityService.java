@@ -3,7 +3,7 @@ package services;
 import dao.FederalEntitiesDAIImpl;
 import models.FederalEntity;
 
-public class FederalEntityService {
+public class FederalEntityService implements DatabaseService<FederalEntity>{
     private FederalEntitiesDAIImpl impl = new FederalEntitiesDAIImpl();
 
     public FederalEntity findById(int id){

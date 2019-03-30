@@ -3,7 +3,7 @@ package services;
 import dao.DistrictsDAOImpl;
 import models.District;
 
-public class DistrictService {
+public class DistrictService implements DatabaseService<District>{
     private DistrictsDAOImpl impl = new DistrictsDAOImpl();
 
     public District findById(int id){

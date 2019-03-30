@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "\"FederalEntities\"", schema = "mcn")
-public class FederalEntity {
+public class FederalEntity implements DatabaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

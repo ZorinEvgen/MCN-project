@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "\"BuildingType\"", schema = "mcn")
-public class BuildingType {
+public class BuildingType implements DatabaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
