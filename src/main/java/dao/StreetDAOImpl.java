@@ -1,36 +1,35 @@
 package dao;
 
-import models.FederalEntity;
+import models.Street;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-public class FederalEntitiesDAIImpl implements EntityDAOImpl<FederalEntity> {
-
-    public FederalEntity findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(FederalEntity.class, id);
+public class StreetDAOImpl implements EntityDAOImpl<Street> {
+    public Street findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Street.class, id);
     }
 
-    public void save(FederalEntity federalEntity) {
+    public void save(Street street) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.save(federalEntity);
+        session.save(street);
         ts.commit();
         session.close();
     }
 
-    public void update(FederalEntity federalEntity) {
+    public void update(Street street) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.update(federalEntity);
+        session.update(street);
         ts.commit();
         session.close();
     }
 
-    public void delete(FederalEntity federalEntity) {
+    public void delete(Street street) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.delete(federalEntity);
+        session.delete(street);
         ts.commit();
         session.close();
     }

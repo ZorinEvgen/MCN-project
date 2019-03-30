@@ -1,10 +1,10 @@
 package services;
 
-import dao.FederalEntitiesDAIImpl;
+import dao.FederalEntitiesDAOImpl;
 import models.FederalEntity;
 
 public class FederalEntityService implements DatabaseEntityService<FederalEntity> {
-    private FederalEntitiesDAIImpl impl = new FederalEntitiesDAIImpl();
+    private FederalEntitiesDAOImpl impl = new FederalEntitiesDAOImpl();
 
     public FederalEntity findById(int id){
         return impl.findById(id);

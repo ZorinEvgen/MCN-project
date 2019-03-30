@@ -3,6 +3,7 @@ package utils;
 import models.BuildingType;
 import models.District;
 import models.FederalEntity;
+import models.Street;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -34,5 +35,6 @@ public class HibernateSessionFactoryUtil {
         configuration.addAnnotatedClass(FederalEntity.class);
         configuration.addAnnotatedClass(District.class);
         configuration.addAnnotatedClass(BuildingType.class);
+        configuration.addAnnotatedClass(Street.class);
     }
 }
