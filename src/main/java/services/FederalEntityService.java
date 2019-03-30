@@ -3,22 +3,22 @@ package services;
 import dao.FederalEntitiesDAIImpl;
 import models.FederalEntity;
 
-public class FederalEntityService implements DatabaseService<FederalEntity>{
+public class FederalEntityService implements DatabaseEntityService<FederalEntity> {
     private FederalEntitiesDAIImpl impl = new FederalEntitiesDAIImpl();
 
     public FederalEntity findById(int id){
         return impl.findById(id);
     }
 
-    public void saveFederalEntity(FederalEntity federalEntity){
+    public void save(FederalEntity federalEntity){
         impl.save(federalEntity);
     }
 
-    public void updateFederalEntity(FederalEntity federalEntity){
+    public void update(FederalEntity federalEntity){
         impl.update(federalEntity);
     }
 
-    public void deleteFederalEntity(FederalEntity federalEntity){
+    public void delete(FederalEntity federalEntity){
         impl.delete(federalEntity);
     }
 }
