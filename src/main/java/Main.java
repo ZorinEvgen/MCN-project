@@ -1,24 +1,22 @@
-import models.BuildingType;
-import models.District;
-import models.FederalEntity;
-import services.BuildingTypeService;
-import services.DistrictService;
-import services.FederalEntityService;
+
+import models.DatabaseEntity;
+import services.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        FederalEntityService federalEntityService = new FederalEntityService();
-        DistrictService districtService = new DistrictService();
-        BuildingTypeService buildingTypeService = new BuildingTypeService();
+        List<DatabaseEntityService> services = new ArrayList<DatabaseEntityService>();
 
-        FederalEntity federalEntity = federalEntityService.findById(1);
-        System.out.println(federalEntity);
+        services.add(new FederalEntityService());
+        services.add(new DistrictService());
+        services.add(new BuildingTypeService());
+        services.add(new StreetService());
 
-        District district = districtService.findById(1);
-        System.out.println(district);
-
-        BuildingType buildingType = buildingTypeService.findById(1);
-        System.out.println(buildingType);
-
+        for (DatabaseEntityService service : services){
+            DatabaseEntity entity = (DatabaseEntity) service.findById(1);
+            System.out.println(entity);
+        }
     }
 }
