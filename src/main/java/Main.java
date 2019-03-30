@@ -13,6 +13,7 @@ public class Main {
         services.add(new DistrictService());
         services.add(new BuildingTypeService());
         services.add(new StreetService());
+        services.add(new AddressService());
 
         for (DatabaseEntityService service : services){
             DatabaseEntity entity = (DatabaseEntity) service.findById(1);

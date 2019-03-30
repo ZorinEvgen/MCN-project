@@ -19,6 +19,7 @@
         <mapping class="District" package="models"/>
         <mapping class="BuildingType" package="models"/>
         <mapping class="Street" package="models"/>
+        <mapping class="Address" package="models"/>
 
     </session-factory>
 
