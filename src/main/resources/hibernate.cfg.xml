@@ -21,6 +21,7 @@
         <mapping class="Street" package="models"/>
         <mapping class="Address" package="models"/>
         <mapping class="EstateType" package="models"/>
+        <mapping class="RealEstate" package="models"/>
 
     </session-factory>
 
