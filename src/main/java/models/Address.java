@@ -47,7 +47,7 @@ public class Address implements DatabaseEntity {
 
     @Override
     public String toString() {
-        return "AddressDAOImpl{" +
+        return "Address{" +
                 "id=" + id +
                 ", houseNumber='" + houseNumber + '\'' +
                 ", street=" + street +
