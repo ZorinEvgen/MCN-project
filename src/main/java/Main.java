@@ -1,5 +1,6 @@
 
 import models.DatabaseEntity;
+import models.real_estate_models.RealEstateCertificate;
 import services.*;
 import services.real_estate_services.*;
 
@@ -17,6 +18,8 @@ public class Main {
         services.add(new StreetService());
         services.add(new AddressService());
         services.add(new RealEstateService());
+        services.add(new RealEstateCertificateService());
+
 
         for (DatabaseEntityService service : services){
             DatabaseEntity entity = (DatabaseEntity) service.findById(1);
