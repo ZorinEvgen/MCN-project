@@ -21,6 +21,10 @@ public class RealEstateCertificate implements DatabaseEntity {
     @Column(name = "\"Certificate date\"")
     private Date certificateDate;
 
+    @OneToOne
+    @JoinColumn(name = "\"RealEstate_id\"")
+    private RealEstate realEstate;
+
     public RealEstateCertificate() {
     }
 
@@ -58,12 +62,21 @@ public class RealEstateCertificate implements DatabaseEntity {
         this.certificateDate = certificateDate;
     }
 
+    public RealEstate getRealEstate() {
+        return realEstate;
+    }
+
+    public void setRealEstate(RealEstate realEstate) {
+        this.realEstate = realEstate;
+    }
+
     @Override
     public String toString() {
-        return "Real estate certificate{" +
+        return "RealEstateCertificate{" +
                 "id=" + id +
-                ", certificate number='" + certificateNumber + '\'' +
-                ", certificate date=" + certificateDate +
+                ", certificateNumber='" + certificateNumber + '\'' +
+                ", certificateDate=" + certificateDate +
+                ", realEstate=" + realEstate +
                 '}';
     }
 }
