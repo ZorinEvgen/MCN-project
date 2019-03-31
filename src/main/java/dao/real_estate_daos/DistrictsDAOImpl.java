@@ -1,36 +1,37 @@
-package dao;
+package dao.real_estate_daos;
 
-import models.FederalEntity;
+import dao.interfaces.EntityDAOImpl;
+import models.real_estate_models.District;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-public class FederalEntitiesDAOImpl implements EntityDAOImpl<FederalEntity> {
+public class DistrictsDAOImpl implements EntityDAOImpl<District> {
 
-    public FederalEntity findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(FederalEntity.class, id);
+    public District findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(District.class, id);
     }
 
-    public void save(FederalEntity federalEntity) {
+    public void save(District district) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.save(federalEntity);
+        session.save(district);
         ts.commit();
         session.close();
     }
 
-    public void update(FederalEntity federalEntity) {
+    public void update(District district) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.update(federalEntity);
+        session.update(district);
         ts.commit();
         session.close();
     }
 
-    public void delete(FederalEntity federalEntity) {
+    public void delete(District district) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.delete(federalEntity);
+        session.delete(district);
         ts.commit();
         session.close();
     }

@@ -1,6 +1,7 @@
 
 import models.DatabaseEntity;
 import services.*;
+import services.real_estate_services.*;
 
 import java.util.ArrayList;
 import java.util.List;

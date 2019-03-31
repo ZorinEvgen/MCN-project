@@ -1,7 +1,8 @@
-package services;
+package services.real_estate_services;
 
-import dao.BuildingTypeDAOImpl;
-import models.BuildingType;
+import dao.real_estate_daos.BuildingTypeDAOImpl;
+import models.real_estate_models.BuildingType;
+import services.DatabaseEntityService;
 
 public class BuildingTypeService implements DatabaseEntityService<BuildingType> {
     private BuildingTypeDAOImpl impl = new BuildingTypeDAOImpl();

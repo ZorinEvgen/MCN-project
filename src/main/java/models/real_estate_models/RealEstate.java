@@ -1,4 +1,6 @@
-package models;
+package models.real_estate_models;
+
+import models.DatabaseEntity;
 
 import javax.persistence.*;
 

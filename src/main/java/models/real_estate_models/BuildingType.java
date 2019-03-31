@@ -1,10 +1,12 @@
-package models;
+package models.real_estate_models;
+
+import models.DatabaseEntity;
 
 import javax.persistence.*;
 
 @Entity
-@Table (name = "\"EstateType\"", schema = "mcn")
-public class EstateType implements DatabaseEntity{
+@Table (name = "\"BuildingType\"", schema = "mcn")
+public class BuildingType implements DatabaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,10 +15,10 @@ public class EstateType implements DatabaseEntity{
     @Column(name = "\"Type\"")
     private String type;
 
-    public EstateType() {
+    public BuildingType() {
     }
 
-    public EstateType(String type) {
+    public BuildingType(String type) {
         this.type = type;
     }
 
@@ -34,7 +36,7 @@ public class EstateType implements DatabaseEntity{
 
     @Override
     public String toString() {
-        return "EstateType{" +
+        return "BuildingType{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 '}';

@@ -1,7 +1,8 @@
-package services;
+package services.real_estate_services;
 
-import dao.FederalEntitiesDAOImpl;
-import models.FederalEntity;
+import dao.real_estate_daos.FederalEntitiesDAOImpl;
+import models.real_estate_models.FederalEntity;
+import services.DatabaseEntityService;
 
 public class FederalEntityService implements DatabaseEntityService<FederalEntity> {
     private FederalEntitiesDAOImpl impl = new FederalEntitiesDAOImpl();

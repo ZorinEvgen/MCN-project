@@ -1,6 +1,7 @@
-package dao;
+package dao.real_estate_daos;
 
-import models.Address;
+import dao.interfaces.EntityDAOImpl;
+import models.real_estate_models.Address;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;

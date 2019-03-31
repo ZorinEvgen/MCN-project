@@ -1,7 +1,8 @@
-package services;
+package services.real_estate_services;
 
-import dao.StreetDAOImpl;
-import models.Street;
+import dao.real_estate_daos.StreetDAOImpl;
+import models.real_estate_models.Street;
+import services.DatabaseEntityService;
 
 public class StreetService implements DatabaseEntityService<Street> {
     private StreetDAOImpl impl = new StreetDAOImpl();

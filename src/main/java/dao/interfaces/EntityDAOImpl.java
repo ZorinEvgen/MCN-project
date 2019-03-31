@@ -1,6 +1,4 @@
-package dao;
-
-import dao.interfaces.EntityDAO;
+package dao.interfaces;
 
 public interface EntityDAOImpl<Entity> extends EntityDAO<Entity> {
     Entity findById(int id);

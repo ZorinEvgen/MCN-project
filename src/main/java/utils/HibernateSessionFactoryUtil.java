@@ -1,6 +1,6 @@
 package utils;
 
-import models.*;
+import models.real_estate_models.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

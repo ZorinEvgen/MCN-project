@@ -1,7 +1,8 @@
-package services;
+package services.real_estate_services;
 
-import dao.AddressDAOImpl;
-import models.Address;
+import dao.real_estate_daos.AddressDAOImpl;
+import models.real_estate_models.Address;
+import services.DatabaseEntityService;
 
 public class AddressService implements DatabaseEntityService<Address> {
     private AddressDAOImpl impl = new AddressDAOImpl();

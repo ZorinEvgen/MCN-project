@@ -1,7 +1,8 @@
-package services;
+package services.real_estate_services;
 
-import dao.DistrictsDAOImpl;
-import models.District;
+import dao.real_estate_daos.DistrictsDAOImpl;
+import models.real_estate_models.District;
+import services.DatabaseEntityService;
 
 public class DistrictService implements DatabaseEntityService<District> {
     private DistrictsDAOImpl impl = new DistrictsDAOImpl();

@@ -1,10 +1,12 @@
-package models;
+package models.real_estate_models;
+
+import models.DatabaseEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Table (name = "\"Districts\"", schema = "mcn")
-public class District implements DatabaseEntity{
+public class District implements DatabaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

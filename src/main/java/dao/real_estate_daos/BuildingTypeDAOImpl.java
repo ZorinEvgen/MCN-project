@@ -1,35 +1,37 @@
-package dao;
+package dao.real_estate_daos;
 
-import models.Street;
+import dao.interfaces.EntityDAOImpl;
+import models.real_estate_models.BuildingType;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 
-public class StreetDAOImpl implements EntityDAOImpl<Street> {
-    public Street findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Street.class, id);
+public class BuildingTypeDAOImpl implements EntityDAOImpl<BuildingType> {
+
+    public BuildingType findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(BuildingType.class, id);
     }
 
-    public void save(Street street) {
+    public void save(BuildingType buildingType) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.save(street);
+        session.save(buildingType);
         ts.commit();
         session.close();
     }
 
-    public void update(Street street) {
+    public void update(BuildingType buildingType) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.update(street);
+        session.update(buildingType);
         ts.commit();
         session.close();
     }
 
-    public void delete(Street street) {
+    public void delete(BuildingType buildingType) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction ts = session.beginTransaction();
-        session.delete(street);
+        session.delete(buildingType);
         ts.commit();
         session.close();
     }
