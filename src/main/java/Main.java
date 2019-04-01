@@ -1,6 +1,5 @@
 
 import models.DatabaseEntity;
-import models.real_estate_models.RealEstateCertificate;
 import services.*;
 import services.real_estate_services.*;
 
@@ -9,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<DatabaseEntityService> services = new ArrayList<DatabaseEntityService>();
+        List<EntityService> services = new ArrayList<EntityService>();
 
         services.add(new EstateTypeService());
         services.add(new FederalEntityService());
@@ -21,7 +20,7 @@ public class Main {
         services.add(new RealEstateCertificateService());
 
 
-        for (DatabaseEntityService service : services){
+        for (EntityService service : services){
             DatabaseEntity entity = (DatabaseEntity) service.findById(1);
 
             if (entity == null) {

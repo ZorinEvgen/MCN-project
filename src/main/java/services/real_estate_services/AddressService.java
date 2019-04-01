@@ -2,24 +2,11 @@ package services.real_estate_services;
 
 import dao.real_estate_daos.AddressDAOImpl;
 import models.real_estate_models.Address;
-import services.DatabaseEntityService;
+import services.EntityService;
 
-public class AddressService implements DatabaseEntityService<Address> {
-    private AddressDAOImpl impl = new AddressDAOImpl();
+public class AddressService extends EntityService<Address> {
 
-    public Address findById(int id) {
-        return impl.findById(id);
-    }
-
-    public void save(Address address) {
-        impl.save(address);
-    }
-
-    public void update(Address address) {
-        impl.update(address);
-    }
-
-    public void delete(Address address) {
-         impl.delete(address);
+    public AddressService() {
+        setImpl(new AddressDAOImpl());
     }
 }
