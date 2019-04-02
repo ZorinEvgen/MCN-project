@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         List<EntityService> services = new ArrayList<EntityService>();
 
+
         services.add(new EstateTypeService());
         services.add(new FederalEntityService());
         services.add(new DistrictService());
