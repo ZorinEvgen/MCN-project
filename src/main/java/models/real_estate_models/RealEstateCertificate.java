@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
-@Table(name = "\"RealEstate_certificate\"", schema = "mcn")
+@Table(name = "\"RealEstate_certificate\"", schema = "mcn_real_estate")
 public class RealEstateCertificate implements DatabaseEntity {
 
     @Id

@@ -5,7 +5,7 @@ import models.DatabaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "\"Districts\"", schema = "mcn")
+@Table (name = "\"Districts\"", schema = "mcn_real_estate")
 public class District implements DatabaseEntity {
 
     @Id

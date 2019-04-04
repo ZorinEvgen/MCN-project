@@ -5,7 +5,7 @@ import models.DatabaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "\"RealEstate\"",schema = "mcn")
+@Table(name = "\"RealEstate\"",schema = "mcn_real_estate")
 public class RealEstate implements DatabaseEntity {
 
     @Id
@@ -30,9 +30,9 @@ public class RealEstate implements DatabaseEntity {
     @JoinColumn(name = "\"BuildingType_id\"")
     private BuildingType buildingType;
 
-//    @OneToOne
-//    @JoinColumn(name = "\"Certificate_of_registration_id\"")
-//    private RealEstateCertificate certificate;
+    @OneToOne
+    @JoinColumn(name = "\"Certificate_of_registration_id\"")
+    private RealEstateCertificate certificate;
 
 
     public RealEstate() {
@@ -87,6 +87,14 @@ public class RealEstate implements DatabaseEntity {
         this.buildingType = buildingType;
     }
 
+    public RealEstateCertificate getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(RealEstateCertificate certificate) {
+        this.certificate = certificate;
+    }
+
     @Override
     public String toString() {
         return "RealEstate{" +
@@ -96,6 +104,7 @@ public class RealEstate implements DatabaseEntity {
                 ", address=" + address +
                 ", estateType=" + estateType +
                 ", buildingType=" + buildingType +
+                ", certificate=" + certificate +
                 '}';
     }
 }

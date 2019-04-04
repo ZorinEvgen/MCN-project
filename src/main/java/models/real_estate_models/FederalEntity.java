@@ -5,7 +5,7 @@ import models.DatabaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "\"FederalEntities\"", schema = "mcn")
+@Table (name = "\"FederalEntities\"", schema = "mcn_real_estate")
 public class FederalEntity implements DatabaseEntity {
 
     @Id
