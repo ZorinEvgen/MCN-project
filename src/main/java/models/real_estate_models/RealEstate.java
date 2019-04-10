@@ -1,8 +1,10 @@
 package models.real_estate_models;
 
 import models.DatabaseEntity;
+import models.errand_models.Inspection;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "\"RealEstate\"",schema = "mcn_real_estate")
@@ -34,6 +36,12 @@ public class RealEstate implements DatabaseEntity {
     @JoinColumn(name = "\"Certificate_of_registration_id\"")
     private RealEstateCertificate certificate;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "\"Inspections_RealEstates\"",
+            schema = "mcn_errands",
+            joinColumns = @JoinColumn(name = "\"inspection_id\""),
+            inverseJoinColumns = @JoinColumn(name = "\"real_estate_id\""))
+    private List<Inspection> inspections;
 
     public RealEstate() {
     }
@@ -95,6 +103,18 @@ public class RealEstate implements DatabaseEntity {
         this.certificate = certificate;
     }
 
+    public List<Inspection> getInspections() {
+        return inspections;
+    }
+
+    public void setInspections(List<Inspection> inspections) {
+        this.inspections = inspections;
+    }
+
+    public void addInspection(Inspection inspection) {
+        inspections.add(inspection);
+    }
+
     @Override
     public String toString() {
         return "RealEstate{" +
@@ -105,6 +125,7 @@ public class RealEstate implements DatabaseEntity {
                 ", estateType=" + estateType +
                 ", buildingType=" + buildingType +
                 ", certificate=" + certificate +
+                ", inspections=" + inspections +
                 '}';
     }
 }

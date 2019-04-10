@@ -5,7 +5,7 @@ import models.DatabaseEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "\"Status\"")
+@Table(name = "\"Status\"", schema = "mcn_errands")
 public class Status implements DatabaseEntity {
 
     @Id

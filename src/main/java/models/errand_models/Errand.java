@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "\"Errand\"")
+@Table(name = "\"Errand\"", schema = "mcn_errands")
 public class Errand implements DatabaseEntity {
 
     @Id
@@ -39,7 +39,7 @@ public class Errand implements DatabaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "\"Status_id\"")
-    private String status;
+    private Status status;
 
     @ManyToOne
     @JoinColumn(name = "\"Errand type_id\"")
@@ -48,12 +48,12 @@ public class Errand implements DatabaseEntity {
     @Column(name = "\"Deadline\"")
     private Date deadline;
 
-    @Column(name = "Information")
+    @Column(name = "\"Information\"")
     private String information;
 
-    @ManyToMany
+    @ManyToMany(targetEntity = Errand.class)
     @JoinColumn(name = "\"Related errand_id\"")
-    private Errand errand;
+    private List<Errand> errands;
 
     public Errand() {
     }
@@ -115,11 +115,11 @@ public class Errand implements DatabaseEntity {
         this.employee = employee;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -147,12 +147,12 @@ public class Errand implements DatabaseEntity {
         this.information = information;
     }
 
-    public Errand getErrand() {
-        return errand;
+    public List<Errand> getErrands() {
+        return errands;
     }
 
-    public void setErrand(Errand errand) {
-        this.errand = errand;
+    public void setErrands(List<Errand> errands) {
+        this.errands = errands;
     }
 
     @Override
@@ -169,7 +169,7 @@ public class Errand implements DatabaseEntity {
                 ", type=" + type +
                 ", deadline=" + deadline +
                 ", information='" + information + '\'' +
-                ", errand=" + errand +
+                ", errands=" + errands +
                 '}';
     }
 }

@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+
 @Entity
 @Table(name = "\"Inspections\"", schema = "mcn_errands")
 public class Inspection implements DatabaseEntity {
@@ -23,8 +24,11 @@ public class Inspection implements DatabaseEntity {
     @JoinColumn(name = "\"Employee_id\"")
     private Employee employee;
 
-    @ManyToMany
-    @JoinColumn(name = "\"RealEstate_id\"")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "\"Inspections_RealEstates\"",
+            schema = "mcn_errands",
+            joinColumns = @JoinColumn(name = "\"real_estate_id\""),
+            inverseJoinColumns = @JoinColumn(name = "\"inspection_id\""))
     private List<RealEstate> realEstates;
 
     public Inspection() {
@@ -61,6 +65,10 @@ public class Inspection implements DatabaseEntity {
 
     public void setRealEstates(List<RealEstate> realEstates) {
         this.realEstates = realEstates;
+    }
+
+    public void addRealEstate(RealEstate realEstate) {
+        realEstates.add(realEstate);
     }
 
     @Override
