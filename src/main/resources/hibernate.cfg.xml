@@ -15,6 +15,7 @@
         <property name="show_sql">true</property>
 
         <!-- MAPPINGS -->
+            <!-- real estate entities -->
         <mapping class="FederalEntity" package="models"/>
         <mapping class="District" package="models"/>
         <mapping class="BuildingType" package="models"/>
@@ -23,6 +24,16 @@
         <mapping class="EstateType" package="models"/>
         <mapping class="RealEstate" package="models"/>
         <mapping class="RealEstateCertificate" package="models"/>
+            <!-- errand entities -->
+        <mapping class="Errand" package="models"/>
+        <mapping class="ErrandTopic" package="models"/>
+        <mapping class="ErrandType" package="models"/>
+        <mapping class="Status" package="models"/>
+        <mapping class="Inspection" package="models"/>
+            <!-- office devisions models -->
+        <mapping class="Devision" package="models"/>
+        <mapping class="Office" package="models"/>
+        <mapping class="Employee" package="models"/>
 
     </session-factory>
 
