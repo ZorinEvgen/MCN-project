@@ -5,6 +5,8 @@ import dao.interfaces.EntityDAOImpl;
 public abstract class EntityService <DatabaseEntity> implements EntityDAOImpl<DatabaseEntity>{
     private EntityDAOImpl<DatabaseEntity> impl;
 
+
+
     private EntityDAOImpl<DatabaseEntity> getImpl() {
         return impl;
     }
@@ -12,6 +14,8 @@ public abstract class EntityService <DatabaseEntity> implements EntityDAOImpl<Da
     protected void setImpl(EntityDAOImpl<DatabaseEntity> impl) {
         this.impl = impl;
     }
+
+
 
     public DatabaseEntity findById(int id) {
         return getImpl().findById(id);
@@ -21,7 +25,7 @@ public abstract class EntityService <DatabaseEntity> implements EntityDAOImpl<Da
         getImpl().save(entity);
     }
 
-        public void update(DatabaseEntity entity) {
+    public void update(DatabaseEntity entity) {
         getImpl().update(entity);
     }
 
